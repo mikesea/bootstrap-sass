@@ -4,7 +4,7 @@ require 'fileutils'
 class NodeSassTest < Minitest::Test
   def test_node_sass_compilation
     path = 'assets/stylesheets'
-    %w(bootstrap bootstrap/_theme).each do |file|
+    %w(bootstrap-3 bootstrap-3/_theme).each do |file|
       FileUtils.mkdir_p 'tmp/node-sass'
       command = "node-sass #{path}/#{file} -o tmp/node-sass/#{File.basename file}.css"
       success = silence_stderr_if !ENV['VERBOSE'] do
