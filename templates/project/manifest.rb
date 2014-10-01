@@ -7,7 +7,7 @@ manifest = Pathname.new(File.dirname(__FILE__))
 assets   = File.expand_path('../../assets', manifest)
 
 # Provide variables files
-bs_stylesheets = "#{assets}/stylesheets/bootstrap"
+bs_stylesheets = "#{assets}/stylesheets/bootstrap-3/bootstrap"
 stylesheet '_bootstrap-variables.sass.erb',
            :erb               => true,
            :to                => '_bootstrap-variables.sass',

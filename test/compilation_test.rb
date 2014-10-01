@@ -4,7 +4,7 @@ require 'sass'
 
 class CompilationTest < Minitest::Test
   def test_compilation
-    path = 'assets/stylesheets'
+    path = 'assets/stylesheets/bootstrap-3'
     %w(_bootstrap bootstrap/_theme).each do |file|
       FileUtils.rm_rf('.sass-cache', secure: true)
       engine = Sass::Engine.for_file("#{path}/#{file}.scss", syntax: :scss, load_paths: [path])

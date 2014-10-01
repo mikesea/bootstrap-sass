@@ -1,0 +1,12 @@
+//= require_relative ../bootstrap-3/bootstrap/affix
+//= require_relative ../bootstrap-3/bootstrap/alert
+//= require_relative ../bootstrap-3/bootstrap/button
+//= require_relative ../bootstrap-3/bootstrap/carousel
+//= require_relative ../bootstrap-3/bootstrap/collapse
+//= require_relative ../bootstrap-3/bootstrap/dropdown
+//= require_relative ../bootstrap-3/bootstrap/tab
+//= require_relative ../bootstrap-3/bootstrap/transition
+//= require_relative ../bootstrap-3/bootstrap/scrollspy
+//= require_relative ../bootstrap-3/bootstrap/modal
+//= require_relative ../bootstrap-3/bootstrap/tooltip
+//= require_relative ../bootstrap-3/bootstrap/popover
