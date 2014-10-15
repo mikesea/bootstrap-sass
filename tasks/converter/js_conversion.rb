@@ -16,10 +16,10 @@ class Converter
       bootstrap_js_files.each do |name|
         cat << contents[name] + "\n"
         name = name.gsub(/\.js$/, '')
-        manifest << "//= require ./bootstrap/#{name}\n"
+        manifest << "//= require ./bootstrap3/#{name}\n"
       end
-      {'assets/javascripts/bootstrap-sprockets.js' => manifest,
-       'assets/javascripts/bootstrap.js' => cat}.each do |path, content|
+      {'assets/javascripts/bootstrap3-sprockets.js' => manifest,
+       'assets/javascripts/bootstrap3.js' => cat}.each do |path, content|
         save_file path, content
         log_processed path
       end

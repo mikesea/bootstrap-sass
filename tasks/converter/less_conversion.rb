@@ -96,7 +96,7 @@ class Converter
             SCSS
             file = replace_all file, %r{(\$icon-font-path): \s*"(.*)" (!default);},  "\n" + unindent(<<-SCSS, 14)
               // [converter] Asset helpers such as Sprockets and Node.js Mincer do not resolve relative paths
-              \\1: if($bootstrap-sass-asset-helper, "bootstrap/", "\\2bootstrap/") \\3;
+              \\1: if($bootstrap-sass-asset-helper, "bootstrap3/", "\\2bootstrap3/") \\3;
             SCSS
           when 'close.less'
             # extract .close { button& {...} } rule
@@ -114,7 +114,7 @@ class Converter
           when 'thumbnails.less', 'labels.less', 'badges.less'
             file = extract_nested_rule file, 'a&'
           when 'glyphicons.less'
-            file = bootstrap_font_files.map { |p| %Q(//= depend_on "bootstrap/#{File.basename(p)}") } * "\n" + "\n" + file
+            file = bootstrap_font_files.map { |p| %Q(//= depend_on "bootstrap3/#{File.basename(p)}") } * "\n" + "\n" + file
             file = replace_rules(file, '@font-face') { |rule|
               rule = replace_all rule, /(\$icon-font(?:-\w+)+)/, '#{\1}'
               replace_asset_url rule, :font
@@ -133,8 +133,8 @@ class Converter
 
       # move bootstrap/_bootstrap.scss to _bootstrap.scss adjusting import paths
       main_from = "#{save_to}/_bootstrap.scss"
-      main_to   = File.expand_path("#{save_to}/../_bootstrap.scss")
-      save_file main_to, File.read(main_from).gsub(/ "/, ' "bootstrap/')
+      main_to   = File.expand_path("#{save_to}/../_bootstrap3.scss")
+      save_file main_to, File.read(main_from).gsub(/ "/, ' "bootstrap3/')
       File.delete(main_from)
     end
 
